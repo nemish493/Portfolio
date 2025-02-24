@@ -8,7 +8,7 @@ def contact():
 
 col1,col2 = st.columns(2,gap='small',vertical_alignment='center')
 with col1:
-    st.image('static/image1.png',width=270)
+    st.image('statics/image1.png',width=270)
     st.write('***Build, learn, iterate—growth follows action.***')
 
 with col2:
@@ -18,7 +18,7 @@ with col2:
 Always open to new projects, collaborations, and opportunities! 🚀 ''')
         
     st.divider()
-    resume ='static/Nemish_cv.pdf'
+    resume ='statics/Nemish_cv.pdf'
 
     bt1,bt2 = st.columns(2,gap='small',vertical_alignment='center')
     with bt1:
