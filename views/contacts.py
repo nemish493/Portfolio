@@ -1,14 +1,14 @@
 import streamlit as st
 #import pymongo
-from pymongo import MongoClient
+#from pymongo import MongoClient
 from datetime import datetime
 
 # MongoDB connection function
 def get_mongo_client():
     # Replace with your MongoDB connection string
-    client = MongoClient("")  # For local MongoDB instance
+    #client = MongoClient("")  # For local MongoDB instance
     # If you're using MongoDB Atlas, you would use the connection string provided by Atlas
-    return client
+    return True
 
 # Function for the contact form
 def contact_form():
