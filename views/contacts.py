@@ -6,7 +6,7 @@ from datetime import datetime
 # MongoDB connection function
 def get_mongo_client():
     # Replace with your MongoDB connection string
-    client = MongoClient("mongodb://localhost:27017/")  # For local MongoDB instance
+    client = MongoClient("")  # For local MongoDB instance
     # If you're using MongoDB Atlas, you would use the connection string provided by Atlas
     return client
 
@@ -27,20 +27,20 @@ def contact_form():
         if submit_button:
             if name and email and message:
                 # Save the data to MongoDB
-                client = get_mongo_client()
-                db = client["contact_form_db"]  
-                collection = db["submissions"]  
+                #client = get_mongo_client()
+                #db = client["contact_form_db"]  
+                #collection = db["submissions"]  
 
                 # Create a dictionary to store the form data
-                contact_data = {
-                    "name": name,
-                    "email": email,
-                    "message": message,
-                    "timestamp": datetime.now()
-                }
+                #contact_data = {
+                 #   "name": name,
+                  #  "email": email,
+                   # "message": message,
+                    #"timestamp": datetime.now()
+                #}
 
                 # Insert the data into the collection
-                collection.insert_one(contact_data)
+                #collection.insert_one(contact_data)
 
                 st.success(f"Thank you, {name}! Your message has been sent.")
             else:
