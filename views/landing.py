@@ -1,35 +1,49 @@
 import streamlit as st
 from views.contacts import contact_form
-#st.title("Nemish's Portfolio")
 
 @st.dialog("contact")
 def contact():
     contact_form()
 
-col1,col2 = st.columns(2,gap='small',vertical_alignment='center')
+col1, col2 = st.columns(2, gap='small', vertical_alignment='center')
+
 with col1:
-    st.image('statics/image1.png',width=270)
+    st.image('statics/image1.png', width=270)
     st.write('***Build, learn, iterate—growth follows action.***')
 
 with col2:
-    st.title("Nemish Kyada ")
-    st.write(''' AI Enthusiast | Exploring Generative AI, LLMs, and MLOps to build real-world solutions.
+    st.title("Nemish Kyada")
+
+    # Contact Information Section
+    st.write("📧 Email:")
+    st.button("nemishkyada5@gmail.com", on_click=lambda: st.markdown("mailto:nemishkyada5@gmail.com"))
+
+    st.write("📱 Phone:")
+    st.markdown("[+49 17685986680](tel:+4917685986680)")
+
+    st.write("🔗 LinkedIn:")
+    st.button("Visit LinkedIn", on_click=lambda: st.markdown("https://www.linkedin.com/in/nemish-kyada/"))
+
+    st.write('''AI Enthusiast | Exploring Generative AI, LLMs, and MLOps to build real-world solutions.
 
 Always open to new projects, collaborations, and opportunities! 🚀 ''')
-        
-    st.divider()
-    resume ='statics/Nemish_cv.pdf'
 
-    bt1,bt2 = st.columns(2,gap='small',vertical_alignment='center')
+    st.divider()
+
+    resume = 'statics/Nemish_cv.pdf'
+    
+    bt1, bt2 = st.columns(2, gap='small', vertical_alignment='center')
+
     with bt1:
         st.download_button(
-                label='Resume',
-                data=open(resume,'rb').read(),
-                file_name='Nemish_cv.pdf',
-                mime='application/pdf',
-                )
+            label='📄 Resume',
+            data=open(resume, 'rb').read(),
+            file_name='Nemish_cv.pdf',
+            mime='application/pdf',
+        )
+
     with bt2:
-        st.button('Contact',on_click=contact)
+        st.button('📩 Contact', on_click=contact)
 
 st.divider()
 
@@ -37,9 +51,11 @@ st.subheader('Experience')
 st.write(''' ***Machine Learning Intern | Kogenie***
 - Worked on LLM model tuning and Generative AI applications.
 - Developed RAG-based systems for efficient retrieval and response generation.
-- Built a website frontend using Next.js and implemented user management with Clerk.''')
+- Built a website frontend using Next.js and implemented user management with Clerk.
+''')
 
 st.divider()
+
 st.subheader('Skills')
 
 skills_css = """
@@ -69,12 +85,14 @@ skills_css = """
 }
 </style>
 """
+
 # Inject CSS
 st.markdown(skills_css, unsafe_allow_html=True)
 
 # List of skills
 skills = ["Python", "Machine Learning", "Deep Learning", "Torch", "Generative AI", 
-          "SQL", "Streamlit", "RAG", "Computer Vision", "MLOps" , "DevOps","NLP", "LLM","Data Analytics", "DBMS", "React" , "NEXT" , "Sci-Kit learn" ,"Spacy" , "Keras" , "Pytorch"]
+          "SQL", "Streamlit", "RAG", "Computer Vision", "MLOps", "DevOps", "NLP", "LLM",
+          "Data Analytics", "DBMS", "React", "NEXT", "Sci-Kit learn", "Spacy", "Keras", "Pytorch"]
 
 # Create HTML for skill bubbles
 skills_html = '<div class="skills-container">'
